@@ -6,7 +6,9 @@ RUN apk add --no-cache \
   bash sed \
   docker-cli
 
-RUN apk --no-cache add python2 RUN curl -sSL https://sdk.cloud.google.com | bash RUN apk del python2 && apk --no-cache add python3
+RUN apk --no-cache add python2 
+RUN curl -sSL https://sdk.cloud.google.com | bash 
+RUN apk del python2 && apk --no-cache add python3
 
 ENV PATH $PATH:/root/google-cloud-sdk/bin
 
