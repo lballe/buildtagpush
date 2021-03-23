@@ -7,6 +7,7 @@ _output() {
 
 _output "START: $(date)"
 
+export GCLOUD_API_KEYFILE=${GCLOUD_API_KEYFILE:-prova}
 echo $GCLOUD_API_KEYFILE
 
 echo $GCLOUD_API_KEYFILE > ~/.gcloud-api-key.json
