@@ -8,11 +8,12 @@ _output() {
 _output "START: $(date)"
 
 # activate for Bitbucket #
-#export GCLOUD_API_KEYFILE=${GCLOUD_API_KEYFILE:-prova}
-#echo $GCLOUD_API_KEYFILE
-#echo $GCLOUD_API_KEYFILE > ~/.gcloud-api-key.json
-#gcloud auth activate-service-account --key-file ~/.gcloud-api-key.json
-#docker login -u _json_key --password-stdin https://gcr.io < ~/.gcloud-api-key.json
+export GCLOUD_API_KEYFILE=${GCLOUD_API_KEYFILE:-prova}
+echo $GCLOUD_API_KEYFILE
+echo $GCLOUD_API_KEYFILE > ~/.gcloud-api-key.json
+gcloud auth activate-service-account --key-file ~/.gcloud-api-key.json
+docker login -u _json_key --password-stdin https://gcr.io < ~/.gcloud-api-key.json
+# end #
 
 case "${1:-}" in
   trypull)
@@ -33,8 +34,8 @@ case "${1:-}" in
 esac
 
 export BUILDKIT_PROGRESS=plain
-export DOCKER_BUILDKIT=1
-
+export DOCKER_BUILDKIT=0
+#export DOCKER_BUILDKIT=1
 export TAG=${TAG:-latest}
 export CACHE_TAG=${CACHE_TAG:-$TAG}
 export WORKDIR=${WORKDIR:-/workspace}
