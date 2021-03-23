@@ -48,11 +48,11 @@ echo ""
 _output "export:"
 export
 
-if >/dev/null DOCKER_CLI_EXPERIMENTAL=enabled docker manifest inspect "$REGISTRY/$IMAGE:$TAG"; then
-  _output "Image $REGISTRY/$IMAGE:$TAG already exists, stopping here."
-  _output "OK -- NOP"
-  exit 0
-fi
+#if >/dev/null DOCKER_CLI_EXPERIMENTAL=enabled docker manifest inspect "$REGISTRY/$IMAGE:$TAG"; then
+#  _output "Image $REGISTRY/$IMAGE:$TAG already exists, stopping here."
+#  _output "OK -- NOP"
+#  exit 0
+#fi
 
 _output "Dockerfile: ${DOCKERFILE}"
 cat "$DOCKERFILE"
