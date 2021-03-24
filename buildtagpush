@@ -34,8 +34,8 @@ case "${1:-}" in
 esac
 
 export BUILDKIT_PROGRESS=plain
-export DOCKER_BUILDKIT=0
-#export DOCKER_BUILDKIT=1
+#export DOCKER_BUILDKIT=0
+export DOCKER_BUILDKIT=1
 export TAG=${TAG:-latest}
 export CACHE_TAG=${CACHE_TAG:-$TAG}
 export WORKDIR=${WORKDIR:-/workspace}
