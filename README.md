@@ -1,12 +1,10 @@
 # buildtagpush
 
-Image to build, tag and push docker images. Great for Google Cloud Build.
+forked from matti/buildtagpush
 
- - BuildKit caching
- - Pulls images needed (otherwise fails on google cloud build with registry mirror, see https://github.com/moby/moby/issues/40262#issuecomment-656036657)
- - Easy to follow output with seconds since beginning
+master branch has BUILDKIT DISABLED (for bitbucket builds)
 
-A sample cloudbuild.yaml:
+buildkit branch has BUILDKIT ENABLED (for gcp or other builds)
 
 ```
 steps:
