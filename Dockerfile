@@ -3,7 +3,7 @@ FROM alpine:3.12.0
 RUN apk add --no-cache \
   curl \
   which \
-  bash sed \
+  bash sed jq \
   docker-cli
 
 RUN apk --no-cache add python2 
